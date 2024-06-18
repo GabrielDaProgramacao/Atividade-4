@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>atividade 15</title>
+</head>
+<body>
+  <h1>Ordenar Array</h1>
+  <label for="arrayInput">Digite os números separados por vírgula:</label>
+  <input type="text" id="arrayInput" placeholder="Ex.: 5, 2, 9, 1, 7">
+  <button onclick="testaOrdenacao()">Ordenar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function ordenaArray(n) {
+      return n.sort((a, b) => a - b);
+    }
+
+    function testaOrdenacao() {
+      let input = document.getElementById("arrayInput").value;
+      let numeros = input.split(",").map(Number);
+      let arrayOrdenado = ordenaArray(numeros);
+      console.log("Array ordenado" + arrayOrdenado)
+      document.getElementById("resultado").textContent = "Array ordenado: " + arrayOrdenado;
+    }
+  </script>
+</body>
+</html>

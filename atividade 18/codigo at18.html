@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atividade 18</title>
+</head>
+<body>
+  <h1>Gerador de Senha</h1>
+  <label for="tamanhoInput">Tamanho da senha:</label>
+  <input type="number" id="tamanhoInput" min="8" max="32" value="8">
+  <button onclick="gerarSenha()">Gerar Senha</button>
+  <p id="senhaOutput"></p>
+
+  <script>
+    function gerarSenha() {
+      let tamanho = parseInt(document.getElementById("tamanhoInput").value);
+      let senha = geraSenha(tamanho);
+      document.getElementById("senhaOutput").textContent = senha;
+      console.log(`Senha gerada: ${senha}`);
+    }
+
+    function geraSenha(tamanho) {
+      const maiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const minusculas = 'abcdefghijklmnopqrstuvwxyz';
+      const numeros = '0123456789';
+      const especiais = '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+
+      const todosCaracteres = maiusculas + minusculas + numeros + especiais;
+
+      let senha = '';
+
+      for (let i = 0; i < tamanho; i++) {
+        senha += todosCaracteres.charAt(Math.floor(Math.random() * todosCaracteres.length));
+      }
+
+      return senha;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atividade 19</title>
+</head>
+<body>
+  <h1 id="tituloPage">Título Inicial</h1>
+  <p id="textoPage">Texto Inicial</p>
+  <button onclick="alterarConteudo()">Alterar Conteúdo</button>
+
+  <script>
+    function alterarConteudo() {
+      // Seleciona o elemento pelo ID
+      let tituloElement = document.getElementById("tituloPage");
+      let textoElement = document.getElementById("textoPage");
+
+      // Altera o conteúdo dos elementos
+      tituloElement.textContent = "Atividade 19";
+      textoElement.textContent = "Alteração de texto via id";
+    }
+  </script>
+</body>
+</html>

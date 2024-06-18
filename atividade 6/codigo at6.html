@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 6</title>
+</head>
+<body>
+ <script>
+ let maioridade = parseFloat(prompt("Digite a sua idade: "));
+ 
+ if (!isNaN(maioridade)) {
+   let resultado1 = "Você é de menor";
+   let resultado2 = "Você é de maior";
+ 
+   if (maioridade < 18) {
+     console.log(resultado1);
+     document.write(resultado1);
+   }
+   else {
+     console.log(resultado2);
+     document.write(resultado2);
+   }
+ }
+ </script>
+</body>
+</html>

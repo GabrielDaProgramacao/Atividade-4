@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 11</title>
+</head>
+<body>    
+
+    <p id="arrayDisplay"></p>
+    <p id="average"></p>
+ <script>
+ function calculaMedia(){
+
+let numArray = [];
+
+let userInput = prompt("Insira um número que será usado na média ");
+
+while (userInput !== null) {
+
+numArray.push(parseFloat(userInput));
+userInput = prompt("Insira outro número que será usado ná média (ou cancele para parar)")
+document.getElementById("arrayDisplay").textContent = "valores da média: " +numArray.join(", ");
+console.log("valores da média: " +numArray.join(", "));
+let sum = numArray.reduce((total, num) => total + num, 0);
+let average = sum / numArray.length;
+document.getElementById("average").textContent = "A média é: " + average.toFixed(2);
+console.log("A média é: " + average.toFixed(2))
+}
+}
+calculaMedia();
+ </script>
+</body>
+</html>

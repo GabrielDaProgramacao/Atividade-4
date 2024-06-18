@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atividade 20</title>
+  <style>
+form {
+
+display: flex;
+flex-direction: column;
+width: 50vh;
+}
+form label,
+form input,
+form textarea,
+form button {
+  margin-bottom: 5px;
+}
+
+  </style>
+</head>
+<body>
+  <h1>Formulário de Contato</h1>
+  <form id="contatoForm" onsubmit="return validarFormulario()">
+    <label for="nomeInput">Nome:</label>
+    <input type="text" id="nomeInput" required>
+
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" required>
+
+    <label for="mensagemInput">Mensagem:</label>
+    <textarea id="mensagemInput" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="mensagemValidacao" style="color: red;"></div>
+
+  <script>
+    function validarFormulario() {
+      let nomeInput = document.getElementById("nomeInput");
+      let emailInput = document.getElementById("emailInput");
+      let mensagemInput = document.getElementById("mensagemInput");
+      let mensagemValidacao = document.getElementById("mensagemValidacao");
+
+      // Verifica se todos os campos obrigatórios foram preenchidos
+      if (nomeInput.value.trim() === "" || emailInput.value.trim() === "" || mensagemInput.value.trim() === "") {
+        mensagemValidacao.textContent = "Por favor, preencha todos os campos obrigatórios.";
+        return false; // Impede o envio do formulário
+      } else {
+        mensagemValidacao.textContent = "";
+        return true; // Permite o envio do formulário
+      }
+    }
+  </script>
+</body>
+</html>

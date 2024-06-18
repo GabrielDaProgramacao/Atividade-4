@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atividade 16</title>
+</head>
+<body>
+  <h1>Verificar Número Primo</h1>
+  <label for="numeroInput">Digite um número:</label>
+  <input type="number" id="numeroInput">
+  <button onclick="testaNumero()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificaPrimo(num) {
+      if (num <= 1) {
+        return false;
+      }
+
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function testaNumero() {
+      let numero = parseInt(document.getElementById("numeroInput").value);
+      let ehPrimo = verificaPrimo(numero);
+      if (ehPrimo) {
+        document.getElementById("resultado").textContent = `O número ${numero} é primo.`;
+      } else {
+        document.getElementById("resultado").textContent = `O número ${numero} não é primo.`;
+      }
+      console.log(`O número ${numero} é ${ehPrimo ? 'primo' : 'não primo'}.`);
+    }
+  </script>
+</body>
+</html>

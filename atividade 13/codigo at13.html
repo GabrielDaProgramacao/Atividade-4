@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 13</title>
+</head>
+<body>
+ <script>
+function inverteString() {
+  let string = prompt("Escreva uma palavra para que seja invertida: ");
+  
+  // Verificar se a entrada é uma string válida
+  if (typeof string === 'string' && string.trim() !== '') {
+    let invertedString = string.split('').reverse().join('');
+    console.log("A palavra escrita de forma invertida fica: " + invertedString);
+    document.write("A palavra escrita de forma invertida fica: " + invertedString);
+}
+
+}
+
+inverteString();
+ </script>
+</body>
+</html>

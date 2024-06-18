@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 12</title>
+</head>
+<body>
+ <script>
+ const PI = 3.14159;
+
+ function calculaAreaCirculo () {
+
+ let area = parseFloat(prompt("Digite o número referente ao raio do Circulo: "));
+ if(!isNaN(area)) {
+ let calculo = (PI * (area * area)).toFixed(3);
+ document.write("A Área do Circulo é igual a: " + calculo)
+ console.log("A Área do Circulo é igual a: " + calculo);
+ }
+ }
+calculaAreaCirculo();
+
+ </script>
+</body>
+</html>

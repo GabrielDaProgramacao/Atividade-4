@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>atividade 7</title>
+</head>
+<body>
+ <script>
+function maioridade(idade){
+
+let mensagem;
+
+if (idade < 12){
+mensagem= "Você é uma criança!";
+}
+else if(idade <= 18){
+mensagem = "Você é um adolecente!";
+}
+else{
+mensagem = "Você é um adulto";
+}
+alert(mensagem);
+console.log(mensagem);
+}
+let idade = parseFloat(prompt("Informe a sua idade: "));
+maioridade(idade);
+</script>
+</body>
+</html>

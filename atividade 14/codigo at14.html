@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atividade 14</title>
+</head>
+<body>
+  <h1>Lista</h1>
+  <input type="text" id="input-text" placeholder="Insira um item a lista...">
+  <button onclick="addToList()">Adicionar</button>
+  <button onclick="removeFromList()">Remover</button>
+  <ul id="item-list"></ul>
+
+  <script>
+    function addToList() {
+      let inputText = document.getElementById("input-text").value;
+      if (inputText.trim() !== "") {
+        let newItem = document.createElement("li");
+        newItem.textContent = inputText;
+        newItem.addEventListener("click", function() {
+          this.classList.toggle("selected");
+        });
+        document.getElementById("item-list").appendChild(newItem);
+        document.getElementById("input-text").value = "";
+      }
+    }
+
+    function removeFromList() {
+      let selectedItems = document.querySelectorAll("#item-list .selected");
+      for (let i = selectedItems.length - 1; i >= 0; i--) {
+        selectedItems[i].remove();
+      }
+    }
+  </script>
+
+  <style>
+    .selected {
+      background-color: #f0f0f0;
+    }
+  </style>
+</body>
+</html>
